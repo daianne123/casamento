@@ -36,6 +36,7 @@ h2{font-size:clamp(34px,5vw,55px);font-weight:400;margin:10px 0}
 .info{background:var(--paper);border:1px solid var(--line);border-radius:24px;padding:30px;text-align:center;box-shadow:var(--shadow)}
 .icon{font-size:31px;margin-bottom:12px}.label{font:700 11px Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
 .value{font-size:23px;margin-top:9px}
+.value a{color:var(--accent);text-decoration:underline;text-underline-offset:4px}
 .gifts{background:#f7eee8}
 .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .card{background:var(--paper);border:1px solid var(--line);border-radius:25px;overflow:hidden;box-shadow:0 10px 35px rgba(74,48,37,.07);display:flex;flex-direction:column}
@@ -44,21 +45,28 @@ h2{font-size:clamp(34px,5vw,55px);font-weight:400;margin:10px 0}
 .card h3{font-size:24px;font-weight:400;margin:0 0 10px}
 .card p{font:14px Arial,sans-serif;line-height:1.6;color:var(--muted);margin:0 0 20px}
 .price{font:700 19px Arial,sans-serif;margin-top:auto}
-.gift-btn{border:0;cursor:pointer;background:var(--ink);color:#fff;border-radius:999px;padding:13px 17px;margin-top:15px;font:700 11px Arial,sans-serif;letter-spacing:.1em;text-transform:uppercase}
+.gift-btn{border:0;cursor:pointer;background:var(--ink);color:#fff;border-radius:999px;padding:13px 17px;margin-top:15px;font:700 11px Arial,sans-serif;letter-spacing:.1em;text-transform:uppercase;transition:.2s}
 .gift-btn:hover{background:var(--accent)}
 .note{max-width:700px;margin:42px auto 0;text-align:center;color:var(--muted);font:13px Arial,sans-serif;line-height:1.7}
 .footer{text-align:center;padding:100px 22px 70px}
 .footer h2{font-size:clamp(42px,7vw,75px);line-height:.95}
 .footer p{max-width:620px;margin:25px auto;font-size:18px;line-height:1.7;color:var(--muted)}
 .small{font:11px Arial,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-top:45px}
+
+/* Modal e Copia e Cola */
 .modal{position:fixed;inset:0;background:rgba(27,20,17,.65);display:none;align-items:center;justify-content:center;padding:20px;z-index:20}
 .modal.show{display:flex}
 .modal-box{background:#fffaf5;border-radius:28px;max-width:430px;width:100%;padding:32px;text-align:center;position:relative}
 .close{position:absolute;right:17px;top:13px;border:0;background:none;font-size:28px;cursor:pointer;color:var(--muted)}
-.modal-box h3{font-size:30px;font-weight:400;margin:8px 0}
-.qr{width:190px;height:190px;margin:22px auto;border:10px solid white;box-shadow:0 5px 20px #0001;display:grid;place-items:center;background:#eee}
-.qr span{font:700 11px Arial,sans-serif;color:#555}
-.pix{font:13px Arial,sans-serif;color:var(--muted);word-break:break-all}
+.modal-box h3{font-size:28px;font-weight:400;margin:8px 0 4px}
+.modal-price{font:700 20px Arial,sans-serif;color:var(--accent);margin-bottom:12px}
+.qr-container{width:180px;height:180px;margin:16px auto;border:8px solid white;box-shadow:0 5px 20px rgba(0,0,0,.08);background:#fff;display:flex;align-items:center;justify-content:center;border-radius:12px;overflow:hidden}
+.qr-container img{width:100%;height:100%;object-fit:contain;display:block}
+.pix-box{background:#fff;border:1px dashed var(--line);border-radius:12px;padding:10px 14px;margin:14px 0;display:flex;align-items:center;justify-content:space-between;gap:10px}
+.pix-key{font:13px monospace;color:var(--ink);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.btn-copy{background:var(--accent);color:#fff;border:0;padding:8px 14px;border-radius:999px;font:700 11px Arial,sans-serif;cursor:pointer;flex-shrink:0;transition:.2s}
+.btn-copy:hover{background:var(--ink)}
+
 @media(max-width:800px){.cards{grid-template-columns:1fr 1fr}.info-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:560px){.cards{grid-template-columns:1fr}.info-grid{grid-template-columns:1fr}.section{padding:70px 18px}.hero{min-height:88vh}}
 </style>
@@ -85,7 +93,8 @@ h2{font-size:clamp(34px,5vw,55px);font-weight:400;margin:10px 0}
     <div class="info-grid">
       <div class="info"><div class="icon">💍</div><div class="label">Casamento</div><div class="value">26/09/2026</div></div>
       <div class="info"><div class="icon">⏰</div><div class="label">Horário</div><div class="value">10:00</div></div>
-      <div class="info"><div class="icon">📍</div><div class="label">Local</div><div class="value">Cartório Silva</div></div>
+      <!-- LINK DO CARTÓRIO ATUALIZADO AQUI -->
+      <div class="info"><div class="icon">📍</div><div class="label">Local</div><div class="value"><a href="https://www.google.com/maps/place/Cart%C3%B3rio+Silva/@-16.7034678,-49.2665331,759m/data=!3m2!1e3!4b1!4m12!1m5!8m4!1e2!2s113246047825506553858!3m1!1e1!3m5!1s0x935ef117e1789be9:0x44c13c73ba0116b3!8m2!3d-16.7034678!4d-49.2639528!16s%2Fg%2F11bw46_yyd?entry=ttu&g_ep=EgoyMDI2MDkwOS4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener">Cartório Silva</a></div></div>
       <div class="info"><div class="icon">❤️</div><div class="label">Presença</div><div class="value">O melhor presente</div></div>
     </div>
   </div>
@@ -96,34 +105,21 @@ h2{font-size:clamp(34px,5vw,55px);font-weight:400;margin:10px 0}
   <div class="section-title">
     <div class="eyebrow">Lista de presentes</div>
     <h2>Ajude a financiar a lua de mel 😎</h2>
-    <p class="sub">Escolha um “presente” e contribua com o valor que quiser. Os nomes são só para deixar a brincadeira mais divertida.</p>
+    <p class="sub">Escolha um “presente” e contribua com o valor sugerido ou o que quiser. Os nomes são para deixar o momento leve!</p>
   </div>
   <div class="cards">
-
-    <article class="card"><div class="pic">🚗</div><div class="card-body"><h3>Aluguel do carro</h3><p>Porque lua de mel fica ainda mais emocionante quando um dos dois precisa dirigir.</p><div class="price">R$ 300</div><button class="gift-btn" onclick="openPix('Aluguel do carro')">Presentear</button></div></article>
-
-    <article class="card"><div class="pic">🏖️</div><div class="card-body"><h3>Passeio de buggy</h3><p>Para descobrir se conseguimos voltar da praia sem ficar cobertos de areia até 2027.</p><div class="price">R$ 200</div><button class="gift-btn" onclick="openPix('Passeio de buggy')">Presentear</button></div></article>
-
-    <article class="card"><div class="pic">🚤</div><div class="card-body"><h3>Passeio de barco</h3><p>Porque andar de carro pela praia é bom. Andar de barco é melhor.</p><div class="price">R$ 250</div><button class="gift-btn" onclick="openPix('Passeio de barco')">Presentear</button></div></article>
-
-    <article class="card"><div class="pic">🍹</div><div class="card-body"><h3>Drinks na praia</h3><p>Pesquisa científica para descobrir quantos drinks são necessários para esquecer o preço da passagem.</p><div class="price">R$ 100</div><button class="gift-btn" onclick="openPix('Drinks na praia')">Presentear</button></div></article>
-
-    <article class="card"><div class="pic">🍽️</div><div class="card-body"><h3>Jantar romântico</h3><p>Depois de um dia inteiro passeando, a única coisa que queremos fazer é comer.</p><div class="price">R$ 200</div><button class="gift-btn" onclick="openPix('Jantar romântico')">Presentear</button></div></article>
-
-    <article class="card"><div class="pic">🌊</div><div class="card-body"><h3>Dia de praia em Maragogi</h3><p>Ajude a financiar a difícil missão de ficar olhando para o mar o dia inteiro.</p><div class="price">R$ 150</div><button class="gift-btn" onclick="openPix('Dia de praia em Maragogi')">Presentear</button></div></article>
-
-    <article class="card"><div class="pic">🏝️</div><div class="card-body"><h3>São Miguel dos Milagres</h3><p>Porque aparentemente uma praia paradisíaca não é suficiente.</p><div class="price">R$ 200</div><button class="gift-btn" onclick="openPix('São Miguel dos Milagres')">Presentear</button></div></article>
-
-    <article class="card"><div class="pic">⛽</div><div class="card-body"><h3>Gasolina da lua de mel</h3><p>O amor move montanhas. A gasolina move o carro.</p><div class="price">R$ 100</div><button class="gift-btn" onclick="openPix('Gasolina da lua de mel')">Presentear</button></div></article>
-
-    <article class="card"><div class="pic">🍕</div><div class="card-body"><h3>Pizza porque desistimos</h3><p>O jantar chique foi cancelado. A pizza venceu. Mais uma vez.</p><div class="price">R$ 80</div><button class="gift-btn" onclick="openPix('Pizza porque desistimos')">Presentear</button></div></article>
-
-    <article class="card"><div class="pic">☀️</div><div class="card-body"><h3>Protetor solar</h3><p>Para não voltarmos da lua de mel parecendo dois camarões apaixonados.</p><div class="price">R$ 60</div><button class="gift-btn" onclick="openPix('Protetor solar')">Presentear</button></div></article>
-
-    <article class="card"><div class="pic">📸</div><div class="card-body"><h3>Foto bonita do casal</h3><p>Porque precisamos provar que estivemos lá — e que pelo menos uma foto ficou boa.</p><div class="price">R$ 50</div><button class="gift-btn" onclick="openPix('Foto bonita do casal')">Presentear</button></div></article>
-
-    <article class="card"><div class="pic">💸</div><div class="card-body"><h3>Fundo de decisões questionáveis</h3><p>Uma contribuição para aquelas compras que começam com “amor, é baratinho...”</p><div class="price">R$ 100</div><button class="gift-btn" onclick="openPix('Fundo de decisões questionáveis')">Presentear</button></div></article>
-
+    <article class="card"><div class="pic">🚗</div><div class="card-body"><h3>Aluguel do carro</h3><p>Porque lua de mel fica ainda mais emocionante quando um dos dois precisa dirigir.</p><div class="price">R$ 300</div><button class="gift-btn" onclick="openPix('Aluguel do carro', 'R$ 300')">Presentear</button></div></article>
+    <article class="card"><div class="pic">🏖️</div><div class="card-body"><h3>Passeio de buggy</h3><p>Para descobrir se conseguimos voltar da praia sem ficar cobertos de areia até 2027.</p><div class="price">R$ 200</div><button class="gift-btn" onclick="openPix('Passeio de buggy', 'R$ 200')">Presentear</button></div></article>
+    <article class="card"><div class="pic">🚤</div><div class="card-body"><h3>Passeio de barco</h3><p>Porque andar de carro pela praia é bom. Andar de barco é melhor.</p><div class="price">R$ 250</div><button class="gift-btn" onclick="openPix('Passeio de barco', 'R$ 250')">Presentear</button></div></article>
+    <article class="card"><div class="pic">🍹</div><div class="card-body"><h3>Drinks na praia</h3><p>Pesquisa científica para descobrir quantos drinks são necessários para esquecer o preço da passagem.</p><div class="price">R$ 100</div><button class="gift-btn" onclick="openPix('Drinks na praia', 'R$ 100')">Presentear</button></div></article>
+    <article class="card"><div class="pic">🍽️</div><div class="card-body"><h3>Jantar romântico</h3><p>Depois de um dia inteiro passeando, a única coisa que queremos fazer é comer.</p><div class="price">R$ 200</div><button class="gift-btn" onclick="openPix('Jantar romântico', 'R$ 200')">Presentear</button></div></article>
+    <article class="card"><div class="pic">🌊</div><div class="card-body"><h3>Dia de praia em Maragogi</h3><p>Ajude a financiar a difícil missão de ficar olhando para o mar o dia inteiro.</p><div class="price">R$ 150</div><button class="gift-btn" onclick="openPix('Dia de praia em Maragogi', 'R$ 150')">Presentear</button></div></article>
+    <article class="card"><div class="pic">🏝️</div><div class="card-body"><h3>São Miguel dos Milagres</h3><p>Porque aparentemente uma praia paradisíaca não é suficiente.</p><div class="price">R$ 200</div><button class="gift-btn" onclick="openPix('São Miguel dos Milagres', 'R$ 200')">Presentear</button></div></article>
+    <article class="card"><div class="pic">⛽</div><div class="card-body"><h3>Gasolina da lua de mel</h3><p>O amor move montanhas. A gasolina move o carro.</p><div class="price">R$ 100</div><button class="gift-btn" onclick="openPix('Gasolina da lua de mel', 'R$ 100')">Presentear</button></div></article>
+    <article class="card"><div class="pic">🍕</div><div class="card-body"><h3>Pizza porque desistimos</h3><p>O jantar chique foi cancelado. A pizza venceu. Mais uma vez.</p><div class="price">R$ 80</div><button class="gift-btn" onclick="openPix('Pizza porque desistimos', 'R$ 80')">Presentear</button></div></article>
+    <article class="card"><div class="pic">☀️</div><div class="card-body"><h3>Protetor solar</h3><p>Para não voltarmos da lua de mel parecendo dois camarões apaixonados.</p><div class="price">R$ 60</div><button class="gift-btn" onclick="openPix('Protetor solar', 'R$ 60')">Presentear</button></div></article>
+    <article class="card"><div class="pic">📸</div><div class="card-body"><h3>Foto bonita do casal</h3><p>Porque precisamos provar que estivemos lá — e que pelo menos uma foto ficou boa.</p><div class="price">R$ 50</div><button class="gift-btn" onclick="openPix('Foto bonita do casal', 'R$ 50')">Presentear</button></div></article>
+    <article class="card"><div class="pic">💸</div><div class="card-body"><h3>Fundo de decisões questionáveis</h3><p>Uma contribuição para aquelas compras que começam com “amor, é baratinho...”</p><div class="price">R$ 100</div><button class="gift-btn" onclick="openPix('Fundo de decisões questionáveis', 'R$ 100')">Presentear</button></div></article>
   </div>
   <p class="note">Os valores exibidos são apenas sugestões para representar cada experiência. <strong>Você pode contribuir com o valor que quiser.</strong> Mais do que qualquer presente, sua presença e carinho já significam muito para nós.</p>
 </div>
@@ -140,25 +136,50 @@ h2{font-size:clamp(34px,5vw,55px);font-weight:400;margin:10px 0}
   <div class="modal-box">
     <button class="close" onclick="closePix()">×</button>
     <div class="eyebrow">Presente escolhido</div>
-    <h3 id="giftName">Jantar romântico</h3>
-    <p class="sub">Obrigado pelo carinho! ❤️<br>Escaneie o QR Code para contribuir.</p>
-    <div class="qr"><span>QR CODE PIX<br><small>substitua pela sua chave</small></span></div>
-    <div class="pix">CHAVE PIX: SUA-CHAVE-AQUI</div>
-    <button class="gift-btn" onclick="closePix()">Fechar</button>
+    <h3 id="giftName">Presente</h3>
+    <div class="modal-price" id="giftPrice">R$ 0,00</div>
+    <p class="sub">Obrigado pelo carinho! ❤️<br>Escaneie o QR Code ou copie a chave:</p>
+    
+    <div class="qr-container">
+      <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=00020126360014BR.GOV.BCB.PIX0114%2B55629937237395204000053039865802BR5919Daianne%20Silva%20Rocha6009SAO%20PAULO621405100OZm14ZLjW6304E1E7" alt="QR Code Pix">
+    </div>
+
+    <div class="pix-box">
+      <span class="pix-key" id="pixKeyText">00020126360014BR.GOV.BCB.PIX0114+55629937237395204000053039865802BR5919Daianne Silva Rocha6009SAO PAULO621405100OZm14ZLjW6304E1E7</span>
+      <button class="btn-copy" id="btnCopy" onclick="copyPixKey()">Copiar</button>
+    </div>
   </div>
 </div>
 
 <script>
-function openPix(name){
-  document.getElementById('giftName').textContent=name;
+const PIX_KEY = "00020126360014BR.GOV.BCB.PIX0114+55629937237395204000053039865802BR5919Daianne Silva Rocha6009SAO PAULO621405100OZm14ZLjW6304E1E7";
+
+function openPix(name, price){
+  document.getElementById('giftName').textContent = name;
+  document.getElementById('giftPrice').textContent = price;
+  document.getElementById('pixKeyText').textContent = PIX_KEY;
   document.getElementById('modal').classList.add('show');
-  document.body.style.overflow='hidden';
+  document.body.style.overflow = 'hidden';
 }
+
 function closePix(){
   document.getElementById('modal').classList.remove('show');
-  document.body.style.overflow='';
+  document.body.style.overflow = '';
 }
-document.addEventListener('keydown',e=>{if(e.key==='Escape')closePix()});
+
+function copyPixKey(){
+  navigator.clipboard.writeText(PIX_KEY).then(() => {
+    const btn = document.getElementById('btnCopy');
+    btn.textContent = 'Copiado! ✓';
+    btn.style.background = '#27ae60';
+    setTimeout(() => {
+      btn.textContent = 'Copiar';
+      btn.style.background = '';
+    }, 2000);
+  });
+}
+
+document.addEventListener('keydown', e => { if(e.key === 'Escape') closePix(); });
 </script>
 </body>
 </html>
