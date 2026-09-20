@@ -41,7 +41,9 @@ h2{font-size:clamp(34px,5vw,55px);font-weight:400;margin:10px 0}
 .gifts{background:#f7eee8}
 .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .card{background:var(--paper);border:1px solid var(--line);border-radius:25px;overflow:hidden;box-shadow:0 10px 35px rgba(74,48,37,.07);display:flex;flex-direction:column}
-.pic{height:190px;display:grid;place-items:center;font-size:72px;background:linear-gradient(135deg,#f4d9ca,#fff5ee)}
+.pic{height:200px;width:100%;background:linear-gradient(135deg,#f4d9ca,#fff5ee);overflow:hidden}
+.pic img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s ease}
+.card:hover .pic img{transform:scale(1.04)}
 .card-body{padding:24px;display:flex;flex-direction:column;flex:1}
 .card h3{font-size:24px;font-weight:400;margin:0 0 10px}
 .card p{font:14px Arial,sans-serif;line-height:1.6;color:var(--muted);margin:0 0 20px}
@@ -94,7 +96,6 @@ h2{font-size:clamp(34px,5vw,55px);font-weight:400;margin:10px 0}
     <div class="info-grid">
       <div class="info"><div class="icon">💍</div><div class="label">Casamento</div><div class="value">26/09/2026</div></div>
       <div class="info"><div class="icon">⏰</div><div class="label">Horário</div><div class="value">10:00</div></div>
-      <!-- LINK DO CARTÓRIO ATUALIZADO AQUI -->
       <div class="info"><div class="icon">📍</div><div class="label">Local</div><div class="value"><a href="https://www.google.com/maps/place/Cart%C3%B3rio+Silva/@-16.7034678,-49.2665331,759m/data=!3m2!1e3!4b1!4m12!1m5!8m4!1e2!2s113246047825506553858!3m1!1e1!3m5!1s0x935ef117e1789be9:0x44c13c73ba0116b3!8m2!3d-16.7034678!4d-49.2639528!16s%2Fg%2F11bw46_yyd?entry=ttu&g_ep=EgoyMDI2MDkwOS4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener">Cartório Silva</a></div></div>
       <div class="info"><div class="icon">❤️</div><div class="label">Presença</div><div class="value">O melhor presente</div></div>
     </div>
@@ -109,18 +110,161 @@ h2{font-size:clamp(34px,5vw,55px);font-weight:400;margin:10px 0}
     <p class="sub">Escolha um “presente” e contribua com o valor sugerido ou o que quiser. Os nomes são para deixar o momento leve!</p>
   </div>
   <div class="cards">
-    <article class="card"><div class="pic">🚗</div><div class="card-body"><h3>Aluguel do carro</h3><p>Porque lua de mel fica ainda mais emocionante quando um dos dois precisa dirigir.</p><div class="price">R$ 300</div><button class="gift-btn" onclick="openPix('Aluguel do carro', 'R$ 300')">Presentear</button></div></article>
-    <article class="card"><div class="pic">🏖️</div><div class="card-body"><h3>Passeio de buggy</h3><p>Para descobrir se conseguimos voltar da praia sem ficar cobertos de areia até 2027.</p><div class="price">R$ 200</div><button class="gift-btn" onclick="openPix('Passeio de buggy', 'R$ 200')">Presentear</button></div></article>
-    <article class="card"><div class="pic">🚤</div><div class="card-body"><h3>Passeio de barco</h3><p>Porque andar de carro pela praia é bom. Andar de barco é melhor.</p><div class="price">R$ 250</div><button class="gift-btn" onclick="openPix('Passeio de barco', 'R$ 250')">Presentear</button></div></article>
-    <article class="card"><div class="pic">🍹</div><div class="card-body"><h3>Drinks na praia</h3><p>Pesquisa científica para descobrir quantos drinks são necessários para esquecer o preço da passagem.</p><div class="price">R$ 100</div><button class="gift-btn" onclick="openPix('Drinks na praia', 'R$ 100')">Presentear</button></div></article>
-    <article class="card"><div class="pic">🍽️</div><div class="card-body"><h3>Jantar romântico</h3><p>Depois de um dia inteiro passeando, a única coisa que queremos fazer é comer.</p><div class="price">R$ 200</div><button class="gift-btn" onclick="openPix('Jantar romântico', 'R$ 200')">Presentear</button></div></article>
-    <article class="card"><div class="pic">🌊</div><div class="card-body"><h3>Dia de praia em Maragogi</h3><p>Ajude a financiar a difícil missão de ficar olhando para o mar o dia inteiro.</p><div class="price">R$ 150</div><button class="gift-btn" onclick="openPix('Dia de praia em Maragogi', 'R$ 150')">Presentear</button></div></article>
-    <article class="card"><div class="pic">🏝️</div><div class="card-body"><h3>São Miguel dos Milagres</h3><p>Porque aparentemente uma praia paradisíaca não é suficiente.</p><div class="price">R$ 200</div><button class="gift-btn" onclick="openPix('São Miguel dos Milagres', 'R$ 200')">Presentear</button></div></article>
-    <article class="card"><div class="pic">⛽</div><div class="card-body"><h3>Gasolina da lua de mel</h3><p>O amor move montanhas. A gasolina move o carro.</p><div class="price">R$ 100</div><button class="gift-btn" onclick="openPix('Gasolina da lua de mel', 'R$ 100')">Presentear</button></div></article>
-    <article class="card"><div class="pic">🍕</div><div class="card-body"><h3>Pizza porque desistimos</h3><p>O jantar chique foi cancelado. A pizza venceu. Mais uma vez.</p><div class="price">R$ 80</div><button class="gift-btn" onclick="openPix('Pizza porque desistimos', 'R$ 80')">Presentear</button></div></article>
-    <article class="card"><div class="pic">☀️</div><div class="card-body"><h3>Protetor solar</h3><p>Para não voltarmos da lua de mel parecendo dois camarões apaixonados.</p><div class="price">R$ 60</div><button class="gift-btn" onclick="openPix('Protetor solar', 'R$ 60')">Presentear</button></div></article>
-    <article class="card"><div class="pic">📸</div><div class="card-body"><h3>Foto bonita do casal</h3><p>Porque precisamos provar que estivemos lá — e que pelo menos uma foto ficou boa.</p><div class="price">R$ 50</div><button class="gift-btn" onclick="openPix('Foto bonita do casal', 'R$ 50')">Presentear</button></div></article>
-    <article class="card"><div class="pic">💸</div><div class="card-body"><h3>Fundo de decisões questionáveis</h3><p>Uma contribuição para aquelas compras que começam com “amor, é baratinho...”</p><div class="price">R$ 100</div><button class="gift-btn" onclick="openPix('Fundo de decisões questionáveis', 'R$ 100')">Presentear</button></div></article>
+    <!-- Aluguel do carro -->
+    <article class="card">
+      <div class="pic">
+        <img src="https://raw.githubusercontent.com/daianne123/casamento/refs/heads/main/Aluguel%20do%20carro.jpeg" alt="Aluguel do carro" loading="lazy">
+      </div>
+      <div class="card-body">
+        <h3>Aluguel do carro</h3>
+        <p>Porque lua de mel fica ainda mais emocionante quando um dos dois precisa dirigir.</p>
+        <div class="price">R$ 300</div>
+        <button class="gift-btn" onclick="openPix('Aluguel do carro', 'R$ 300')">Presentear</button>
+      </div>
+    </article>
+
+    <!-- Passeio de buggy -->
+    <article class="card">
+      <div class="pic">
+        <img src="https://raw.githubusercontent.com/daianne123/casamento/refs/heads/main/Passeio%20de%20buggy.jpeg" alt="Passeio de buggy" loading="lazy">
+      </div>
+      <div class="card-body">
+        <h3>Passeio de buggy</h3>
+        <p>Para descobrir se conseguimos voltar da praia sem ficar cobertos de areia até 2027.</p>
+        <div class="price">R$ 200</div>
+        <button class="gift-btn" onclick="openPix('Passeio de buggy', 'R$ 200')">Presentear</button>
+      </div>
+    </article>
+
+    <!-- Passeio de barco -->
+    <article class="card">
+      <div class="pic">
+        <img src="https://raw.githubusercontent.com/daianne123/casamento/refs/heads/main/Passeio%20de%20barco.jpeg" alt="Passeio de barco" loading="lazy">
+      </div>
+      <div class="card-body">
+        <h3>Passeio de barco</h3>
+        <p>Porque andar de carro pela praia é bom. Andar de barco é melhor.</p>
+        <div class="price">R$ 250</div>
+        <button class="gift-btn" onclick="openPix('Passeio de barco', 'R$ 250')">Presentear</button>
+      </div>
+    </article>
+
+    <!-- Drinks na praia -->
+    <article class="card">
+      <div class="pic">
+        <img src="https://raw.githubusercontent.com/daianne123/casamento/refs/heads/main/Drinks%20na%20praia.jpeg" alt="Drinks na praia" loading="lazy">
+      </div>
+      <div class="card-body">
+        <h3>Drinks na praia</h3>
+        <p>Pesquisa científica para descobrir quantos drinks são necessários para esquecer o preço da passagem.</p>
+        <div class="price">R$ 100</div>
+        <button class="gift-btn" onclick="openPix('Drinks na praia', 'R$ 100')">Presentear</button>
+      </div>
+    </article>
+
+    <!-- Jantar romântico -->
+    <article class="card">
+      <div class="pic">
+        <img src="https://raw.githubusercontent.com/daianne123/casamento/refs/heads/main/Jantar%20rom%C3%A2ntico.jpeg" alt="Jantar romântico" loading="lazy">
+      </div>
+      <div class="card-body">
+        <h3>Jantar romântico</h3>
+        <p>Depois de um dia inteiro passeando, a única coisa que queremos fazer é comer.</p>
+        <div class="price">R$ 200</div>
+        <button class="gift-btn" onclick="openPix('Jantar romântico', 'R$ 200')">Presentear</button>
+      </div>
+    </article>
+
+    <!-- Dia de praia em Maragogi -->
+    <article class="card">
+      <div class="pic">
+        <img src="https://raw.githubusercontent.com/daianne123/casamento/refs/heads/main/Dia%20de%20praia%20em%20Maragogi.jpeg" alt="Dia de praia em Maragogi" loading="lazy">
+      </div>
+      <div class="card-body">
+        <h3>Dia de praia em Maragogi</h3>
+        <p>Ajude a financiar a difícil missão de ficar olhando para o mar o dia inteiro.</p>
+        <div class="price">R$ 150</div>
+        <button class="gift-btn" onclick="openPix('Dia de praia em Maragogi', 'R$ 150')">Presentear</button>
+      </div>
+    </article>
+
+    <!-- São Miguel dos Milagres -->
+    <article class="card">
+      <div class="pic">
+        <img src="https://raw.githubusercontent.com/daianne123/casamento/refs/heads/main/S%C3%A3o%20Miguel%20dos%20Milagres.jpeg" alt="São Miguel dos Milagres" loading="lazy">
+      </div>
+      <div class="card-body">
+        <h3>São Miguel dos Milagres</h3>
+        <p>Porque aparentemente uma praia paradisíaca não é suficiente.</p>
+        <div class="price">R$ 200</div>
+        <button class="gift-btn" onclick="openPix('São Miguel dos Milagres', 'R$ 200')">Presentear</button>
+      </div>
+    </article>
+
+    <!-- Gasolina da lua de mel -->
+    <article class="card">
+      <div class="pic">
+        <img src="https://raw.githubusercontent.com/daianne123/casamento/refs/heads/main/Gasolina%20da%20lua%20de%20mel.jpg" alt="Gasolina da lua de mel" loading="lazy">
+      </div>
+      <div class="card-body">
+        <h3>Gasolina da lua de mel</h3>
+        <p>O amor move montanhas. A gasolina move o carro.</p>
+        <div class="price">R$ 100</div>
+        <button class="gift-btn" onclick="openPix('Gasolina da lua de mel', 'R$ 100')">Presentear</button>
+      </div>
+    </article>
+
+    <!-- Pizza porque desistimos -->
+    <article class="card">
+      <div class="pic">
+        <img src="https://raw.githubusercontent.com/daianne123/casamento/refs/heads/main/Pizza%20porque%20desistimos.jpg" alt="Pizza porque desistimos" loading="lazy">
+      </div>
+      <div class="card-body">
+        <h3>Pizza porque desistimos</h3>
+        <p>O jantar chique foi cancelado. A pizza venceu. Mais uma vez.</p>
+        <div class="price">R$ 80</div>
+        <button class="gift-btn" onclick="openPix('Pizza porque desistimos', 'R$ 80')">Presentear</button>
+      </div>
+    </article>
+
+    <!-- Protetor solar -->
+    <article class="card">
+      <div class="pic">
+        <img src="https://raw.githubusercontent.com/daianne123/casamento/refs/heads/main/Protetor%20solar.jpeg" alt="Protetor solar" loading="lazy">
+      </div>
+      <div class="card-body">
+        <h3>Protetor solar</h3>
+        <p>Para não voltarmos da lua de mel parecendo dois camarões apaixonados.</p>
+        <div class="price">R$ 60</div>
+        <button class="gift-btn" onclick="openPix('Protetor solar', 'R$ 60')">Presentear</button>
+      </div>
+    </article>
+
+    <!-- Foto bonita do casal -->
+    <article class="card">
+      <div class="pic">
+        <img src="https://raw.githubusercontent.com/daianne123/casamento/refs/heads/main/Foto%20bonita%20do%20casal.jpeg" alt="Foto bonita do casal" loading="lazy">
+      </div>
+      <div class="card-body">
+        <h3>Foto bonita do casal</h3>
+        <p>Porque precisamos provar que estivemos lá — e que pelo menos uma foto ficou boa.</p>
+        <div class="price">R$ 50</div>
+        <button class="gift-btn" onclick="openPix('Foto bonita do casal', 'R$ 50')">Presentear</button>
+      </div>
+    </article>
+
+    <!-- Fundo de decisões questionáveis -->
+    <article class="card">
+      <div class="pic">
+        <img src="https://raw.githubusercontent.com/daianne123/casamento/refs/heads/main/Fundo%20de%20decis%C3%B5es%20question%C3%A1veis.jpeg" alt="Fundo de decisões questionáveis" loading="lazy">
+      </div>
+      <div class="card-body">
+        <h3>Fundo de decisões questionáveis</h3>
+        <p>Uma contribuição para aquelas compras que começam com “amor, é baratinho...”</p>
+        <div class="price">R$ 100</div>
+        <button class="gift-btn" onclick="openPix('Fundo de decisões questionáveis', 'R$ 100')">Presentear</button>
+      </div>
+    </article>
   </div>
   <p class="note">Os valores exibidos são apenas sugestões para representar cada experiência. <strong>Você pode contribuir com o valor que quiser.</strong> Mais do que qualquer presente, sua presença e carinho já significam muito para nós.</p>
 </div>
