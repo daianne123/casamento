@@ -25,6 +25,25 @@ h1{font-size:clamp(58px,10vw,110px);font-weight:400;line-height:.9;margin:25px 0
 .amp{color:var(--accent);font-style:italic}
 .date{font-family:Arial,sans-serif;letter-spacing:.14em;text-transform:uppercase;font-size:14px}
 .intro{max-width:650px;margin:38px auto 0;font-size:20px;line-height:1.65;color:#4f4640}
+
+/* Estilo para a foto do casal */
+.couple-photo-wrapper{
+  width:210px;
+  height:280px;
+  margin:28px auto 0;
+  border-radius:140px 140px 24px 24px;
+  overflow:hidden;
+  border:6px solid #fff;
+  box-shadow:var(--shadow);
+  background:var(--paper);
+}
+.couple-photo-wrapper img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
 .btn{display:inline-block;margin-top:30px;background:var(--ink);color:white;padding:15px 24px;border-radius:999px;font:700 12px Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;transition:.2s}
 .btn:hover{transform:translateY(-2px);background:var(--accent)}
 .section{padding:90px 22px}
@@ -80,6 +99,12 @@ h2{font-size:clamp(34px,5vw,55px);font-weight:400;margin:10px 0}
     <div class="kicker">Nosso grande dia</div>
     <h1>Athus <span class="amp">&amp;</span> Daianne</h1>
     <div class="date">26 de setembro de 2026 · 10h</div>
+
+    <!-- Foto do casal adicionada aqui -->
+    <div class="couple-photo-wrapper">
+      <img src="https://raw.githubusercontent.com/daianne123/casamento/refs/heads/main/4eee18a6-9b88-4dbd-8d19-326bc3c37804.jpg" alt="Athus e Daianne" loading="eager">
+    </div>
+
     <p class="intro"><strong>O mais importante já está garantido: ter vocês conosco. ❤️</strong><br>
     Se quiserem nos presentear, preparamos uma lista diferente — para transformar o carinho de vocês em momentos especiais na nossa lua de mel.</p>
     <a class="btn" href="#presentes">Ver lista de presentes</a>
